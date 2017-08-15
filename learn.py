@@ -41,11 +41,11 @@ for n in primes():
 #--------------------------------
 
 def is_palindrome(num):
-    list1=list(str(num))
-    list1.reverse()
+    list1=list(str(num)).reverse()
     return list1==list(str(num))
 
-output = filter(is_palindrome, range(1,1000))
-print(list(output))
-    
+#output = filter(is_palindrome, range(1,1000))
+#print(list(output))
+
+#--------------------------------
 
