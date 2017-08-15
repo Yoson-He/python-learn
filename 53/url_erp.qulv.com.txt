@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Q-BOSS - 登录</title>
+    <link href="/Content/css/site.css?ver=2015101201" rel="stylesheet" type="text/css" />
+    <style>
+        .BDC_CaptchaIconsDiv {
+            display: none;
+        }
+        .captcha-ele{ display: none;}
+    </style>
+</head>
+<body>
+    <div class="login-header">
+        <div class="app-name">Q-BOSS</div>
+    </div>
+    <div class="login-content">
+<form action="/" method="post">            <div class="login-error"></div>
+            <div class="item login-ele">
+                <label class="item-label"><strong>用户名：</strong></label>
+                <input class="item-input" id="UserName" name="UserName" type="text" value="" />
+                
+            </div>
+            <div class="item login-ele">
+                <label class="item-label"><strong>密码：</strong></label>
+                <input class="item-input" id="Password" name="Password" type="password" />
+                
+            </div>
+            <div class="item login-ele captcha-ele">
+                <label class="item-label"><strong>验证码：</strong></label>
+                <input class="item-input" id="Captcha" name="Captcha" type="text" value="" />
+                
+            </div>
+            <div class="item login-ele captcha-ele">
+                <label class="item-label"><strong> </strong></label>
+                <div style="width: 200px;display: inline-block">
+                    
+
+
+  <div class="BDC_CaptchaDiv " id="LoginCaptche_CaptchaDiv" style="width: 105px !important; height: 30px !important; "><!--
+ --><div class="BDC_CaptchaImageDiv" id="LoginCaptche_CaptchaImageDiv" style="width: 80px !important; height: 30px !important;"><!--
+   --><a href="//captcha.org/captcha.html?asp.net" title="CAPTCHA" onclick="LoginCaptche.OnHelpLinkClick(); return LoginCaptche.FollowHelpLink;"><img class="BDC_CaptchaImage" id="LoginCaptche_CaptchaImage" src="/BotDetectCaptcha.ashx?get=image&amp;c=LoginCaptche&amp;t=a6cd04f6ddde456ca48ad8ea052b7e8a" alt="Retype the CAPTCHA code from the image" /></a><!--
+ --></div><!--
+ --><div class="BDC_CaptchaIconsDiv" id="LoginCaptche_CaptchaIconsDiv" style="width: 19px !important;"><!--
+   --><a class="BDC_ReloadLink" id="LoginCaptche_ReloadLink" href="#" onclick="LoginCaptche.ReloadImage(); this.blur(); return false;" title="Change the CAPTCHA code"><img class="BDC_ReloadIcon" id="LoginCaptche_ReloadIcon" src="/BotDetectCaptcha.ashx?get=reload-small-icon" alt="Change the CAPTCHA code" /></a><!--
+   --><a class="BDC_SoundLink" id="LoginCaptche_SoundLink" href="/BotDetectCaptcha.ashx?get=sound&amp;c=LoginCaptche&amp;t=a6cd04f6ddde456ca48ad8ea052b7e8a" onclick="LoginCaptche.PlaySound(); this.blur(); return false;" title="Speak the CAPTCHA code" rel="nofollow"><img class="BDC_SoundIcon" id="LoginCaptche_SoundIcon" src="/BotDetectCaptcha.ashx?get=sound-small-icon" alt="Speak the CAPTCHA code" /></a><!--
+   --><div class="BDC_Placeholder" id="LoginCaptche_AudioPlaceholder">&nbsp;</div><!--
+ --></div>
+    <script src="/BotDetectCaptcha.ashx?get=script-include" type="text/javascript"></script>
+    <script type="text/javascript">
+    //<![CDATA[
+      BotDetect.Init('LoginCaptche', 'a6cd04f6ddde456ca48ad8ea052b7e8a', 'Captcha', true, true, true, true, 1200, 7200, 0, false);
+    //]]>
+    </script>
+    <script type="text/javascript">
+    //<![CDATA[
+      try{(function(){var bdrsn = document.createElement('script'); bdrsn.type = 'text/javascript'; bdrsn.async = true; bdrsn.src = document.location.protocol + '//remote.captcha.com/include.js?i=ATABMAEwATQBMgEwFMgLrWBYfgw81_qcCK0U3FTaXW3KATIBMAEwATEBNAE2ATABMgplbi1MYXRuLVVTAjgwAjMw'; var fsn = document.getElementsByTagName('script')[0]; fsn.parentNode.insertBefore(bdrsn, fsn);})();} catch(err){}
+    //]]>
+    </script>
+    <input type="hidden" name="BDC_VCID_LoginCaptche" id="BDC_VCID_LoginCaptche" value="a6cd04f6ddde456ca48ad8ea052b7e8a" />
+    <input type="hidden" name="BDC_BackWorkaround_LoginCaptche" id="BDC_BackWorkaround_LoginCaptche" value="0" />
+  </div>
+
+
+                </div>
+            </div>
+            <div class="item login-ele">
+                <input type="submit" value="登录" class="btn-submit" />
+            </div>
+</form>    </div>
+    <noscript>
+        <div>您的浏览器已被禁用Javascript脚本，为了正常使用系统，请启用后刷新页面。</div>
+    </noscript>
+    <script src="/Scripts/jquery/jquery.min.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery/jquery.validate.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var testChrome = function () {
+            var raw = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);
+            return raw ? parseInt(raw[2], 10) >= 50 : false;
+        }
+        var testx64 = function () {
+            var raw = navigator.userAgent.match(/x64/);
+            return raw;
+        }
+        if (!testChrome()) {
+
+            var planform = testx64() ? "64" : "";
+            var downloadUrl = "http://183.2.191.8/dist/ChromeStandaloneSetup" + planform + ".exe";
+            $(".login-error").append("系统暂时只支持版本号在 50 以上的Chrome浏览器，请使用Chrome浏览器, 点击<a href='" + downloadUrl + "'>下载</a>").css("color", "red");
+            // $(".login-ele").hide();
+        }
+        function refreshCaptcha() {
+            var userName = $("#UserName").val();
+            if (!userName) {
+                $(".captcha-ele").hide();
+                return;
+            }
+            $.ajax({
+                url: "/Home/IsCaptchaRequired",
+                data: {
+                    userName: userName
+                },
+                success:function(r) {
+                    if (r) {
+                        $(".captcha-ele").show();
+                    } else {
+                        $(".captcha-ele").hide();
+                    }
+                }
+            });
+        }
+        $(function () {
+            $(".captcha-ele").hide();
+            if (window != top) {
+                top.location.href = window.location.href;
+            }
+            $("#UserName").change(function() {
+                refreshCaptcha();
+            });
+            $(window).focus();
+            if ($("#UserName").val() == "") {
+                $("#UserName").focus();
+            }
+            else {
+                $("#Password").focus();
+            }
+            LoginCaptche.OnHelpLinkClick = function (e) {
+                $("#Captcha").get(0).Captcha.ReloadImage();
+            }
+            LoginCaptche.FollowHelpLink = false;
+            
+            refreshCaptcha();
+        });
+    </script>
+</body>
+</html>
