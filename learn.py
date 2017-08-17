@@ -73,9 +73,18 @@ def count():
         fs.append(f)
     return fs
 
-f1, f2, f3 = count()
-print(f1(),f2(),f3())
+#f1, f2, f3 = count()
+#print(f1(),f2(),f3())
 
+def log(func):
+    def wrapper():
+        print('call %s():' % func.__name__)
+        return func()
+    return wrapper
+
+@log
+def now():
+    print('2015-3-25')
 
 
 
